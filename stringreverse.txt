@@ -1,0 +1,39 @@
+//stringreverse//
+
+
+package com.anp.trainerproject;
+
+import java.util.Scanner;
+
+public class reversestring {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		try {
+			System.out.println("Enter a string to reverse:");
+			String input = scanner.nextLine();
+			String reversed = reverseString(input);
+			System.out.println("Reversed string:" + reversed);
+		} catch (NullPointerException | StringIndexOutOfBoundsException e) {
+			System.out.println("An error occured:" + e.getMessage());
+		} finally {
+			scanner.close();
+		}
+	}
+	private static String reverseString(String input) {
+		if (input == null|| input.isEmpty()) {
+			throw new NullPointerException("Input string is null or empty");
+		}
+		StringBuilder reversed = new StringBuilder();
+		for (int i = input.length() - 1; i >= 0; i--) {
+		    reversed.append(input.charAt(i));
+		
+	}
+	return reversed.toString();
+}
+
+		
+
+		// TODO Auto-generated method stub
+
+	}
